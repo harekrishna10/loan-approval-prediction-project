@@ -38,3 +38,32 @@ property area.
 - Decision Tree: 0.6992 (overfit: train accuracy 1.0000)
 
 ## How to Run
+
+pip install streamlit scikit-learn pandas numpy
+streamlit run app.py
+Then open http://localhost:8501 in the browser.
+
+## Adding to the github
+
+git init
+git add .
+git commit -m "Loan approval prediction project"
+git remote add origin https://github.com/harekrishna10/loan-approval-prediction-project.git
+git branch -M main
+git push -u origin main
+
+## Deploying to streamlit web app
+
+1. Go to share.streamlit.io and sign in with your GitHub account
+2. Click Create app
+3. github-deploy now
+4. repository: select github repository
+5. Branch: main
+6. Main file path: app.py
+7. app url: give app url as of your choice
+8. save and deploy
+9. wait a few minutes — you'll get a public URL like https://loan-approval-prediction-project10.streamlit.app/
+
+## Live Demo
+
+Deployed on Streamlit Community Cloud: https://loan-approval-prediction-project10.streamlit.app/
