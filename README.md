@@ -39,18 +39,18 @@ property area.
 
 ## How to Run
 
-pip install streamlit scikit-learn pandas numpy
-streamlit run app.py
-Then open http://localhost:8501 in the browser.
+1. pip install streamlit scikit-learn pandas numpy
+2. streamlit run app.py
+3. Then open http://localhost:8501 in the browser.
 
 ## Adding to the github
 
-git init
-git add .
-git commit -m "Loan approval prediction project"
-git remote add origin https://github.com/harekrishna10/loan-approval-prediction-project.git
-git branch -M main
-git push -u origin main
+1. git init
+2. git add .
+3. git commit -m "Loan approval prediction project"
+4. git remote add origin https://github.com/harekrishna10/loan-approval-prediction-project.git
+5. git branch -M main
+6. git push -u origin main
 
 ## Deploying to streamlit web app
 
