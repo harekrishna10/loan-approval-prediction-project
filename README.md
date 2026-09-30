@@ -4,7 +4,7 @@ Predicts whether a loan application will be approved or not using machine learni
 
 GitHub URL : https://github.com/harekrishna10/loan-approval-prediction-project
 
-Streamlit Web app Live Demo : 
+Streamlit Web app Live Demo : https://loan-approval-prediction-project10.streamlit.app/
 
 ## Dataset
 
