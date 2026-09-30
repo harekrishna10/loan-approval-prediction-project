@@ -1,69 +1,57 @@
-# Loan Approval Prediction
+# Loan Approval Prediction Project
 
-A machine learning project that predicts whether a loan application will be
-approved, based on applicant details such as income, credit history and
-property area.
+Predicts whether a loan application will be approved or not using machine learning.
+
+GitHub URL : https://github.com/harekrishna10/loan-approval-prediction-project
+
+Streamlit Web app Live Demo : 
 
 ## Dataset
 
-- File: `train_u6lujuX_CVtuZ9i.csv`
-- 614 rows × 13 columns
-- Target column: `Loan_Status` (Y = approved, N = rejected)
+- `train_u6lujuX_CVtuZ9i.csv` — 614 rows, 13 columns
+- Target: `Loan_Status` (1 = approved, 0 = rejected)
 
-## Project Steps
+## Steps
 
-1. **Data collection** – loaded the labelled loan dataset
-2. **Data cleaning** – checked duplicates; filled missing values
-   (mode for categorical columns, median for LoanAmount and Loan_Amount_Term)
-3. **Encoding** – binary columns and target encoded to 0/1,
-   Property_Area one-hot encoded, Loan_ID dropped
-4. **EDA** – target distribution, approval rates by category,
-   numerical distributions and correlation heatmap
-5. **Feature engineering** – created `Total_Income`
-   (ApplicantIncome + CoapplicantIncome); dropped the two original
-   income columns as redundant
-6. **Model development** – 80/20 stratified split (random_state=42);
-   compared Logistic Regression, Decision Tree and Random Forest
-7. **Evaluation & tuning** – final model: linear SVM
-   (StandardScaler + SVC(kernel="linear", probability=True));
-   evaluated with confusion matrix, precision, recall, F1, ROC-AUC,
-   GridSearchCV and 5-fold cross-validation
-8. **Deployment** – Streamlit web app (`app.py`) loads `loan_model.pkl`
-   and predicts approval with confidence score
+1. Loaded the dataset and inspected it
+2. Data cleaning — removed duplicates, filled missing values (mode for categoricals, median for numericals)
+3. Data transformation — encoded categorical variables, dropped Loan_ID
+4. EDA — target distribution, approval rates, correlation heatmap
+5. Feature selection — created Total_Income, dropped redundant income columns
+6. Model building — Logistic Regression, Random Forest, Decision Tree algorithm used for finding the best model.
+7. Final pipeline — StandardScaler + Logistic Regression, tuned with GridSearchCV (Best C = 10, test accuracy 0.8537), saved as `loan_model.pkl`
+8. Streamlit web app (`app.py`) for live predictions
 
-## Model Results (Step 6 comparison, test set)
+## Model Results
 
-- Logistic Regression: 0.8537
-- Random Forest: 0.8455
-- Decision Tree: 0.6992 (overfit: train accuracy 1.0000)
+![Model Comparison](loan_model_comparison.png)
+
+Final tuned model test accuracy: **0.8537**
 
 ## How to Run
 
-1. pip install streamlit scikit-learn pandas numpy
-2. streamlit run app.py
-3. Then open http://localhost:8501 in the browser.
+1. Install packages: `pip install -r requirements.txt`
+2. Open `loan_prediction.ipynb` and run all cells
+3. Creat new Terminal
+4. Start the app: `streamlit run app.py`
 
-## Adding to the github
+## Adding to GitHub
 
 1. git init
 2. git add .
 3. git commit -m "Loan approval prediction project"
-4. git remote add origin https://github.com/harekrishna10/loan-approval-prediction-project.git
-5. git branch -M main
+4. git branch -M main
+5. git remote add origin https://github.com/harekrishna10/loan-approval-prediction-project.git
 6. git push -u origin main
 
-## Deploying to streamlit web app
+## Adding to Streamlit web app
 
-1. Go to share.streamlit.io and sign in with your GitHub account
-2. Click Create app
-3. github-deploy now
-4. repository: select github repository
-5. Branch: main
-6. Main file path: app.py
-7. app url: give app url as of your choice
-8. save and deploy
-9. wait a few minutes — you'll get a public URL like https://loan-approval-prediction-project10.streamlit.app/
-
-## Live Demo
-
-Deployed on Streamlit Community Cloud: https://loan-approval-prediction-project10.streamlit.app/
+1. go to https://share.streamlit.io/
+2. click on New app
+3. Select the github account or sign up with github account
+4. Deploy app form will appear
+5. In Repo : choose harekrishna10/loan-approval-prediction-project
+6. In Branch : choose main
+7. In Main file path : choose app.py
+8. In App URL : give desired url for you live streamlit web app like: loan-approval-prediction-project-10
+9. click on Deploy button

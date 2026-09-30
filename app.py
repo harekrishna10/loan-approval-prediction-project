@@ -3,7 +3,7 @@ import streamlit as st
 import joblib
 import pandas as pd
 
-# Load the trained model pipeline (scaler + SVM)
+# Load the trained model pipeline (scaler + Logistic Regression)
 model = joblib.load("loan_model.pkl")
 
 st.title("Loan Approval Prediction")
